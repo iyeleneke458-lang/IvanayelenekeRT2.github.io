@@ -1,39 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - SnapFolio Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Portfolio BUT R&T - YELENEKE Ivana</title>
+  <meta name="description" content="Portfolio de démarche réflexive - BUT Réseaux et Télécommunications">
+  <meta name="keywords" content="Portfolio, BUT RT, Réseaux, Télécommunications, Cybersécurité">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: SnapFolio
-  * Template URL: https://bootstrapmade.com/snapfolio-bootstrap-portfolio-template/
-  * Updated: Jul 21 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    .feature-item-clickable {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-item-clickable:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .feature-item-clickable .click-hint {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #0d6efd;
+    }
+    .competence-modal .modal-header {
+      border-bottom: 2px solid var(--accent-color, #0d6efd);
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+    .competence-modal .modal-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+    .competence-modal .niveau-badge {
+      display: inline-block;
+      background: #0d6efd;
+      color: #fff;
+      border-radius: 12px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+    .competence-modal .sous-titre {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .ac-header-btn {
+      width: 100%;
+      text-align: left;
+      background: rgba(13, 110, 253, 0.05);
+      border: 1px solid rgba(13, 110, 253, 0.15);
+      padding: 12px 15px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+    }
+    .ac-header-btn:hover {
+      background: rgba(13, 110, 253, 0.1);
+    }
+    .ac-code {
+      font-weight: 700;
+      font-size: 0.85rem;
+      background: #0d6efd;
+      color: #fff;
+      border-radius: 6px;
+      padding: 3px 8px;
+      margin-right: 10px;
+    }
+    .ac-title-text {
+      font-size: 0.95rem;
+      color: #222;
+      font-weight: 500;
+    }
+    .reflexion-grid {
+      background: #fdfdfd;
+      border: 1px solid #eef2f7;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 10px;
+    }
+    .question-block {
+      margin-bottom: 15px;
+      border-left: 3px solid #0d6efd;
+      padding-left: 12px;
+    }
+    .question-title {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #0d6efd;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .question-response {
+      font-size: 0.92rem;
+      color: #333;
+      line-height: 1.5;
+    }
+    .pdf-container {
+      margin-top: 20px;
+      border-top: 1px dashed #ddd;
+      padding-top: 15px;
+    }
+    .pdf-viewer {
+      width: 100%;
+      height: 400px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -45,66 +143,49 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Accueil</a></li>
-          <li><a href="#about"><i class="bi bi-person navicon"></i> A propos de moi </a></li>
+          <li><a href="#about"><i class="bi bi-person navicon"></i> À propos de moi</a></li>
           <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> CV</a></li>
           <li><a href="#skills"><i class="bi bi-gear-fill navicon me-2"></i>Compétences</a></li>
-          <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-            </ul>
-          </li>
+          <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projets</a></li>
         </ul>
       </nav>
 
       <div class="social-links text-center">
         <a href="https://github.com/iyeleneke458-lang" target="_blank" class="github"><i class="bi bi-github"></i></a>
       </div>
-
     </div>
-
   </header>
 
   <main class="main">
 
-    <!-- Hero Section -->
     <section id="hero" class="hero section">
-
       <div class="background-elements">
         <div class="bg-circle circle-1"></div>
         <div class="bg-circle circle-2"></div>
       </div>
 
       <div class="hero-content">
-
         <div class="container">
           <div class="row align-items-center">
-
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
               <div class="hero-text">
-                <h1>BUT </h1> <h1> Réseaux et Télécommunication <span class="accent-text"> </span></h1>
-                <h2>YELENEKE Ivana </h2>
-                <p class="lead">je suis une  <span class="typed" data-typed-items="étudiante, future administrateur systèmes, future technicienne réseaux, future analyste SOC"></span></p>
-                <p class="description">Passionnée par les réseaux IP, je participe à la conception et au déploiement des infrastructures de communication en me basant  sur le routage, la commutation et les protocoles réseau, afin de garantir des systèmes performants et évolutifs.</p>
-
+                <h1>BUT</h1>
+                <h1> Réseaux et Télécommunications <span class="accent-text"></span></h1>
+                <h2>YELENEKE Ivana</h2>
+                <p class="lead">Je suis une <span class="typed" data-typed-items="étudiante, future administratrice systèmes, future technicienne réseaux, future analyste SOC"></span></p>
+                <p class="description">Passionnée par les réseaux IP, je participe à la conception et au déploiement des infrastructures de communication en me basant sur le routage, la commutation et les protocoles réseau, afin de garantir des systèmes performants et évolutifs.</p>
                 <div class="hero-actions">
                   <a href="#portfolio" class="btn btn-primary">Voir mes projets</a>
                 </div>
-
               </div>
             </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
+    </section>
 
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
     <section id="about" class="about section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row">
           <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="200">
             <div class="profile-card">
@@ -116,19 +197,17 @@
                   <i class="bi bi-check-circle-fill"></i>
                 </div>
               </div>
-
               <div class="profile-content">
                 <h3>YELENEKE Ivana</h3>
-                <p class="profession">Étudiante en 1 ère de Réseaux et Télécommunication</p>
-
+                <p class="profession">Étudiante en 1ère année de Réseaux et Télécommunications</p>
                 <div class="contact-links">
-                  <a href="mailto:iyeleneke458@gmail.com" class="contact-item">
+                  <a href="mailto:votre.email@exemple.com" class="contact-item">
                     <i class="bi bi-envelope"></i>
-                    iyeleneke458@gmail.com
+                    <span>ivana.yeleneke@exemple.com</span>
                   </a>
                   <a href="#" class="contact-item">
                     <i class="bi bi-geo-alt"></i>
-                    Béthune , Hauts-de-France
+                    Béthune, Hauts-de-France
                   </a>
                 </div>
               </div>
@@ -138,162 +217,348 @@
           <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
             <div class="about-content">
               <div class="section-header">
-                <h2>Je suis une passionnée de cybersécurité et de réseaux</h2>
+                <h2>Je suis passionnée de cybersécurité et de réseaux</h2>
               </div>
-
               <div class="description">
-                <p> Étudiante en Réseaux et Télécommunications, je développe une vision d’ensemble des infrastructures de communication et de leur rôle dans le fonctionnement des systèmes numériques. Ma formation me permet d’aborder la conception, le déploiement et l’exploitation des réseaux, tout en prenant en compte les enjeux de performance, de fiabilité et de sécurité.</p>
-
-                <p>J’envisage les réseaux comme des systèmes structurants, où l’organisation, l’interconnexion et l’évolution des technologies sont essentielles pour répondre aux besoins des utilisateurs. Curieux et rigoureux, je cherche à renforcer mes compétences afin de participer à la mise en place de solutions réseau durables, capables d’accompagner les transformations numériques actuelles et futures.
-                  Si tu veux un style plus académique, plus professionnel, ou plus personnel, dis-le moi.</p>
+                <p>Étudiante en Réseaux et Télécommunications, je développe une vision d’ensemble des infrastructures de communication et de leur rôle dans le fonctionnement des systèmes numériques. Ma formation me permet d’aborder la conception, le déploiement et l’exploitation des réseaux, tout en prenant en compte les enjeux de performance, de fiabilité et de sécurité.</p>
+                <p>J’envisage les réseaux comme des systèmes structurants, où l’organisation, l’interconnexion et l’évolution des technologies sont essentielles pour répondre aux besoins des utilisateurs. Curieuse et rigoureuse, je cherche à renforcer mes compétences afin de participer à la mise en place de solutions réseau durables, capables d’accompagner les transformations numériques actuelles et futures.</p>
               </div>
-
 
               <div class="details-grid">
                 <div class="detail-row">
                   <div class="detail-item">
                     <span class="detail-label">Sport</span>
-                    <span class="detail-value">Basket &amp; Ténis</span>
+                    <span class="detail-value">Basket &amp; Tennis</span>
                   </div>
                   <div class="detail-item">
                     <span class="detail-label">Environnement</span>
-                    <span class="detail-value">Végétation, Gardinage</span>
+                    <span class="detail-value">Végétation, Jardinage</span>
                   </div>
                 </div>
                 <div class="detail-row">
                   <div class="detail-item">
-                    <span class="detail-label">Voyage</span>
+                    <span class="detail-label">Voyages</span>
                     <span class="detail-value">Espagne, Belgique</span>
                   </div>
                   <div class="detail-item">
-                    <span class="detail-label">Languages</span>
-                    <span class="detail-value">English, Spanish, French</span>
+                    <span class="detail-label">Langues</span>
+                    <span class="detail-value">Anglais, Espagnol, Français</span>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /About Section -->
-
-
-    <!-- Skills Section -->
     <section id="skills" class="portfolio-details section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
+        <div class="col-lg-12">
+          <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+            <div class="features mt-4">
+              <div class="container section-title" data-aos="fade-up">
+                <h2>Compétences BUT RT – Démarche Réflexive</h2>
+                <p>Cliquez sur une compétence pour déplier ses Apprentissages Critiques (AC) et compléter vos auto-évaluations.</p>
               </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
 
-          <div class="col-lg-12">
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-
-              <div class="features mt-4">
-                <div class="container section-title" data-aos="fade-up">
-                  <h2>Compétences</h2>
-                </div><!-- End Section Title -->
-                <div class="row gy-3">
-                  <div class="col-md-6">
-                    <div class="feature-item filter-photography" data-aos="fade-up" data-aos-delay="400">
-                      <h4>Administrer</h4>
-                      <p>Administrer les réseaux et l'infrastructure informatique.</p>
-                    </div>
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <div class="feature-item feature-item-clickable" data-bs-toggle="modal" data-bs-target="#modalAdministrer">
+                    <h4><i class="bi bi-server me-2"></i>Administrer</h4>
+                    <p>Administrer les réseaux et systèmes informatiques.</p>
+                    <div class="click-hint"><i class="bi bi-plus-circle-fill"></i> Cliquer pour voir les AC & Traces (PDF)</div>
                   </div>
+                </div>
 
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
-                      <h4>Connecter</h4>
-                      <p>Connecter les usagers et les entreprises à l'Internet.</p>
-                    </div>
+                <div class="col-md-6">
+                  <div class="feature-item feature-item-clickable" data-bs-toggle="modal" data-bs-target="#modalConnecter">
+                    <h4><i class="bi bi-wifi me-2"></i>Connecter</h4>
+                    <p>Connecter les usagers et les entreprises à Internet.</p>
+                    <div class="click-hint"><i class="bi bi-plus-circle-fill"></i> Cliquer pour voir les AC & Traces (PDF)</div>
                   </div>
+                </div>
 
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
-                      <h4>Programmer</h4>
-                      <p>Créer des scripts, outils et applications informatiques.</p>
-                    </div>
+                <div class="col-md-6">
+                  <div class="feature-item feature-item-clickable" data-bs-toggle="modal" data-bs-target="#modalProgrammer">
+                    <h4><i class="bi bi-code-slash me-2"></i>Programmer</h4>
+                    <p>Créer des outils et applications pour les R&T.</p>
+                    <div class="click-hint"><i class="bi bi-plus-circle-fill"></i> Cliquer pour voir les AC & Traces (PDF)</div>
                   </div>
+                </div>
 
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="700">
-                      <h4>Sécuriser</h4>
-                      <p>Mettre en œuvre des solutions de sécurité réseau et système.</p>
-                    </div>
+                <div class="col-md-6">
+                  <div class="feature-item feature-item-clickable" data-bs-toggle="modal" data-bs-target="#modalSecuriser">
+                    <h4><i class="bi bi-shield-lock me-2"></i>Sécuriser</h4>
+                    <p>Sécuriser les équipements et les usages numériques.</p>
+                    <div class="click-hint"><i class="bi bi-plus-circle-fill"></i> Cliquer pour voir les AC & Traces (PDF)</div>
                   </div>
+                </div>
 
-                  <div class="col-md-6">
-                    <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
-                      <h4>Surveiller</h4>
-                      <p>Pratiquer en permanence la surveillance du réseau afin de prévenir ou vite remarquer des pannes éventuelles .</p>
-                    </div>
+                <div class="col-md-6">
+                  <div class="feature-item feature-item-clickable" data-bs-toggle="modal" data-bs-target="#modalSurveiller">
+                    <h4><i class="bi bi-graph-up me-2"></i>Surveiller</h4>
+                    <p>Surveiller le réseau et prévenir les pannes et incidents.</p>
+                    <div class="click-hint"><i class="bi bi-plus-circle-fill"></i> Cliquer pour voir les AC & Traces (PDF)</div>
                   </div>
-
                 </div>
               </div>
             </div>
+
+            <div class="modal fade competence-modal" id="modalAdministrer" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-server me-2"></i>Compétence : Administrer</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="niveau-badge">Niveau 1 (S2) – Niveau Descriptif / Explicatif</span>
+                    <p class="sous-titre">Découvrez et analysez vos apprentissages critiques. Cliquez sur un AC pour l'évaluer.</p>
+                    
+                    <div class="accordion" id="accAdministrer">
+                      
+                      <div class="accordion-item border-0 mb-3">
+                        <button class="ac-header-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAC1103">
+                          <span><span class="ac-code">AC11.03</span><span class="ac-title-text">Configurer les fonctions de base du réseau local.</span></span>
+                          <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div id="collapseAC1103" class="accordion-collapse collapse" data-bs-parent="#accAdministrer">
+                          <div class="reflexion-grid">
+                            <div class="question-block">
+                              <div class="question-title">Ce que j'ai fait</div>
+                              <div class="question-response">J'ai configuré un commutateur Cisco Catalyst et un routeur pour segmenter un réseau d'agence en utilisant des VLANs, puis mis en place un serveur DHCP.</div>
+                            </div>
+                            <div class="question-block">
+                              <div class="question-title">Pourquoi je l'ai fait</div>
+                              <div class="question-response">Pour isoler les flux administratifs des flux invités de l'entreprise afin d'optimiser la bande passante et limiter la diffusion sur le réseau local.</div>
+                            </div>
+                            <div class="question-block">
+                              <div class="question-title">Comment je l'ai fait (Méthodes, outils, ressources)</div>
+                              <div class="question-response">En utilisant l'interface en ligne de commande (CLI) via le logiciel Cisco Packet Tracer. J'ai utilisé mes fiches de TP et les cours sur l'encapsulation 802.1Q.</div>
+                            </div>
+                            <div class="question-block">
+                              <div class="question-title">Mes difficultés</div>
+                              <div class="question-response">Au début, le routage inter-VLAN ne fonctionnait pas car j'avais oublié de configurer le port de liaison entre le switch et le routeur en mode "Trunk".</div>
+                            </div>
+                            <div class="question-block">
+                              <div class="question-title">Ce que j'en ai appris</div>
+                              <div class="question-response">J'ai compris l'importance de bien schématiser sa topologie en amont et de vérifier l'état des liaisons logiques (Trunking) avant de tester le routage.</div>
+                            </div>
+                            <div class="question-block">
+                              <div class="question-title">Ce que je ferais autrement</div>
+                              <div class="question-response">Je nommerais les VLAN de manière plus explicite dès le début et j'utiliserais un tableau d'adressage IP strict pour éviter d'attribuer deux fois la même passerelle.</div>
+                            </div>
+                            
+                            <div class="pdf-container">
+                              <h6><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Trace associée (Extrait de configuration / Schéma ciblés)</h6>
+                              <p class="small text-muted mb-2">Visualisez ci-dessous la configuration ou le schéma d'analyse associé à cet AC.</p>
+                              <iframe class="pdf-viewer" src="assets/pdf/sae12_vlan.pdf"></iframe>
+                              <div class="mt-2 text-end">
+                                <a href="assets/pdf/sae12_vlan.pdf" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-box-arrow-up-right me-1"></i>Ouvrir en plein écran</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item border-0 mb-3">
+                        <button class="ac-header-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAC1105">
+                          <span><span class="ac-code">AC11.05</span><span class="ac-title-text">Identifier les dysfonctionnements du réseau local et savoir les signaler.</span></span>
+                          <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div id="collapseAC1105" class="accordion-collapse collapse" data-bs-parent="#accAdministrer">
+                          <div class="reflexion-grid">
+                            <div class="question-block"><div class="question-title">Ce que j'ai fait</div><div class="question-response">Exemple : Utilisation des commandes Ping et Traceroute pour localiser une coupure...</div></div>
+                            <div class="question-block"><div class="question-title">Pourquoi je l'ai fait</div><div class="question-response">...</div></div>
+                            <div class="question-block"><div class="question-title">Comment je l'ai fait</div><div class="question-response">...</div></div>
+                            <div class="question-block"><div class="question-title">Mes difficultés</div><div class="question-response">...</div></div>
+                            <div class="question-block"><div class="question-title">Ce que j'en ai appris</div><div class="question-response">...</div></div>
+                            <div class="question-block"><div class="question-title">Ce que je ferais autrement</div><div class="question-response">...</div></div>
+                            <div class="pdf-container">
+                              <h6><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Trace associée</h6>
+                              <iframe class="pdf-viewer" src="assets/pdf/votre_fichier.pdf"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade competence-modal" id="modalConnecter" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-wifi me-2"></i>Compétence : Connecter</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="niveau-badge">Niveau 1 (S2) – Niveau Descriptif / Explicatif</span>
+                    <div class="accordion" id="accConnecter">
+                      <div class="accordion-item border-0 mb-3">
+                        <button class="ac-header-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAC1204">
+                          <span><span class="ac-code">AC12.04</span><span class="ac-title-text">Connecter les systèmes de ToIP (Téléphonie sur IP).</span></span>
+                          <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div id="collapseAC1204" class="accordion-collapse collapse" data-bs-parent="#accConnecter">
+                          <div class="reflexion-grid">
+                            <div class="question-block"><div class="question-title">Ce que j'ai fait</div><div class="question-response">J'ai déployé et raccordé des téléphones IP à un IP-BX logiciel (type Asterisk ou simulation sur Packet Tracer) et configuré les plans de numérotation de base.</div></div>
+                            <div class="question-block"><div class="question-title">Pourquoi je l'ai fait</div><div class="question-response">Pour permettre la convergence voix-données sur le réseau de l'entreprise.</div></div>
+                            <div class="question-block"><div class="question-title">Comment je l'ai fait</div><div class="question-response">En configurant les serveurs de fichiers, les VLAN Voix dédiés et les comptes SIP des utilisateurs.</div></div>
+                            <div class="question-block"><div class="question-title">Mes difficultés</div><div class="question-response">Problème d'enregistrement des téléphones dû à une mauvaise affectation de l'adresse IP du serveur de boot (Option 150 DHCP).</div></div>
+                            <div class="question-block"><div class="question-title">Ce que j'en ai appris</div><div class="question-response">Le rôle crucial des options DHCP pour automatiser le déploiement de terminaux IP de masse.</div></div>
+                            <div class="question-block"><div class="question-title">Ce que je ferais autrement</div><div class="question-response">Mettre en place une QoS (Qualité de Service) plus tôt pour prioriser les paquets RTP de voix.</div></div>
+                            <div class="pdf-container">
+                              <h6><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Trace associée</h6>
+                              <iframe class="pdf-viewer" src="assets/pdf/sae_toip.pdf"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade competence-modal" id="modalProgrammer" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-code-slash me-2"></i>Compétence : Programmer</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="niveau-badge">Niveau 1 (S2) – Niveau Descriptif / Explicatif</span>
+                    <div class="accordion" id="accProgrammer">
+                      <div class="accordion-item border-0 mb-3">
+                        <button class="ac-header-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAC1304">
+                          <span><span class="ac-code">AC13.04</span><span class="ac-title-text">Connaître l'architecture et les technologies d'un site Web (SAE 14).</span></span>
+                          <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div id="collapseAC1304" class="accordion-collapse collapse" data-bs-parent="#accProgrammer">
+                          <div class="reflexion-grid">
+                            <div class="question-block"><div class="question-title">Ce que j'ai fait</div><div class="question-response">J'ai structuré et personnalisé mon site web portfolio en utilisant du HTML5 sémantique, du CSS3, et le framework Bootstrap pour le rendre responsive.</div></div>
+                            <div class="question-block"><div class="question-title">Pourquoi je l'ai fait</div><div class="question-response">Pour valider la SAE 14 et créer un support numérique pérenne afin de stocker mes analyses réflexives de BUT.</div></div>
+                            <div class="question-block"><div class="question-title">Comment je l'ai fait</div><div class="question-response">À l'aide de l'éditeur Visual Studio Code, en manipulant les grilles Bootstrap (row/col) et en gérant mon code via Git.</div></div>
+                            <div class="question-block"><div class="question-title">Mes difficultés</div><div class="question-response">L'imbrication et l'appel correct des scripts JS pour faire fonctionner les modals de manière fluide sans casser le design global.</div></div>
+                            <div class="question-block"><div class="question-title">Ce que j'en ai appris</div><div class="question-response">J'ai compris comment séparer le fond (HTML) de la forme (CSS) et intégrer des fenêtres dynamiques pour structurer proprement l'information.</div></div>
+                            <div class="question-block"><div class="question-title">Ce que je ferais autrement</div><div class="question-response">Utiliser des classes CSS encore plus génériques pour éviter les répétitions de code dans mes styles personnalisés.</div></div>
+                            <div class="pdf-container">
+                              <h6><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Trace associée</h6>
+                              <iframe class="pdf-viewer" src="assets/pdf/sae14_web.pdf"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade competence-modal" id="modalSecuriser" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-shield-lock me-2"></i>Compétence : Sécuriser</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="niveau-badge">Niveau 1 (S2) – Niveau Descriptif / Explicatif</span>
+                    <div class="accordion" id="accSecuriser">
+                      <div class="accordion-item border-0 mb-3">
+                        <button class="ac-header-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAC1401">
+                          <span><span class="ac-code">AC14.01</span><span class="ac-title-text">Connaître et utiliser les bonnes pratiques de cybersécurité.</span></span>
+                          <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div id="collapseAC1401" class="accordion-collapse collapse" data-bs-parent="#accSecuriser">
+                          <div class="reflexion-grid">
+                            <div class="question-block"><div class="question-title">Ce que j'ai fait</div><div class="question-response">Suivi complet des modules de l'ANSSI (Mooc SecNumAcadémie) et obtention de la certification Cisco Introduction to Cybersecurity.</div></div>
+                            <div class="question-block"><div class="question-title">Pourquoi je l'ai fait</div><div class="question-response">Pour acquérir l'hygiène numérique indispensable à un futur technicien / administrateur R&T.</div></div>
+                            <div class="question-block"><div class="question-title">Comment je l'ai fait</div><div class="question-response">Étude en autonomie guidée, fiches récapitulatives sur le chiffrement, la gestion des mots de passe et la sécurité physique.</div></div>
+                            <div class="question-block"><div class="question-title">Mes difficultés</div><div class="question-response">Assimiler l'ensemble des concepts juridiques liés à la protection des données (RGPD).</div></div>
+                            <div class="question-block"><div class="question-title">Ce que j'en ai appris</div><div class="question-response">Que la sécurité commence par l'utilisateur (le facteur humain) et qu'aucune barrière technique n'est efficace sans une bonne hygiène numérique.</div></div>
+                            <div class="question-block"><div class="question-title">Ce que je ferais autrement</div><div class="question-response">Prendre des notes de manière plus synthétique sous forme de cartes mentales pour réviser plus rapidement.</div></div>
+                            <div class="pdf-container">
+                              <h6><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Trace associée</h6>
+                              <iframe class="pdf-viewer" src="assets/pdf/certif_anssi.pdf"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade competence-modal" id="modalSurveiller" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-graph-up me-2"></i>Compétence : Surveiller</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="niveau-badge">Niveau 1 (S2) – Niveau Descriptif / Explicatif</span>
+                    <div class="accordion" id="accSurveiller">
+                      <div class="accordion-item border-0 mb-3">
+                        <button class="ac-header-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAC1502">
+                          <span><span class="ac-code">AC15.02</span><span class="ac-title-text">Prendre en main des outils de test de pénétration / analyse réseau.</span></span>
+                          <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div id="collapseAC1502" class="accordion-collapse collapse" data-bs-parent="#accSurveiller">
+                          <div class="reflexion-grid">
+                            <div class="question-block"><div class="question-title">Ce que j'ai fait</div><div class="question-response">J'ai utilisé l'analyseur de protocoles Wireshark pour capturer les trames lors d'une session de navigation locale (HTTP et HTTPS).</div></div>
+                            <div class="question-block"><div class="question-title">Pourquoi je l'ai fait</div><div class="question-response">Pour observer concrètement la différence entre un protocole non sécurisé en texte clair (HTTP) et un protocole chiffré (TLS/HTTPS).</div></div>
+                            <div class="question-block"><div class="question-title">Comment je l'ai fait</div><div class="question-response">En appliquant des filtres de capture précis (ex: http.request.method == "POST") pour intercepter les requêtes.</div></div>
+                            <div class="question-block"><div class="question-title">Mes difficultés</div><div class="question-response">Le volume massif de paquets capturés rendait la lecture difficile au début, avant de maîtriser les filtres d'affichage de Wireshark.</div></div>
+                            <div class="question-block"><div class="question-title">Ce que j'en ai appris</div><div class="question-response">J'ai compris comment reconstruire un flux TCP et vu à quel point il est simple de lire des données sensibles (mots de passe) si le flux n'est pas chiffré.</div></div>
+                            <div class="question-block"><div class="question-title">Ce que je ferais autrement</div><div class="question-response">Cibler dès le départ l'adresse IP de ma cible de test pour éviter de surcharger la mémoire tampon de capture.</div></div>
+                            <div class="pdf-container">
+                              <h6><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Trace associée</h6>
+                              <iframe class="pdf-viewer" src="assets/pdf/wireshark_analysis.pdf"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-
         </div>
-
       </div>
+    </section>
 
-    </section> 
-  
-
-    <!-- Resume Section -->
     <section id="resume" class="resume section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>CV</h2>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-          <!-- Left column with summary and contact -->
           <div class="col-lg-4">
             <div class="resume-side" data-aos="fade-right" data-aos-delay="100">
               <div class="profile-img mb-4">
                 <img src="assets/img/profile/IUT.webp" alt="Profile" class="img-fluid rounded">
               </div>
 
-              <h3>à propos de moi</h3>
-              <p>Âgée de 18 ans, je suis motivée, rigoureuse et désireuse d’acquérir de l’expérience dans un environnement professionnel. Je possède des compétences en organisation, adaptabilité et une forte envie d’apprendre.
-</p>
+              <h3>À propos de moi</h3>
+              <p>Âgée de 18 ans, je suis motivée, rigoureuse et désireuse d’acquérir de l’expérience dans un environnement professionnel. Je possède des compétences en organisation, adaptabilité et une forte envie d’apprendre.</p>
 
-              <h3 class="mt-4">Contacts </h3>
+              <h3 class="mt-4">Contacts</h3>
               <ul class="contact-info list-unstyled">
-                <li><i class="bi bi-geo-alt"></i> Béthune , Hauts-de-France</li>
-                <li><i class="bi bi-envelope"></i> contact</li>
-                <li><i class="bi bi-phone"></i> +33 06 45 67 98 </li>
+                <li><i class="bi bi-geo-alt"></i> Béthune, Hauts-de-France</li>
+                <li><i class="bi bi-envelope"></i> ivana.yeleneke@exemple.com</li>
+                <li><i class="bi bi-phone"></i> +33 06 45 67 98</li>
                 <li><i class="bi bi-linkedin"></i> linkedin.com/in/example</li>
               </ul>
 
@@ -305,7 +570,7 @@
                     <span>90%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
@@ -315,7 +580,7 @@
                     <span>85%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
@@ -325,7 +590,7 @@
                     <span>90%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
@@ -335,98 +600,79 @@
                     <span>80%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Right column with experience and education -->
           <div class="col-lg-8 ps-4 ps-lg-5">
-            <!-- Experience Section -->
             <div class="resume-section" data-aos="fade-up">
-              <h3><i class="bi bi-briefcase me-2"></i> Experiences professionnelles</h3>
-
+              <h3><i class="bi bi-briefcase me-2"></i> Expériences professionnelles</h3>
               <div class="resume-item">
                 <h4>Réseaux & systèmes</h4>
                 <ul>
-                  <li>Simulation de réseaux informatiques (déc. 2025)
- Réalisation d’un réseau local virtuel via Cisco Packet Tracer : VLAN, DHCP, routage statique et dynamique.
-</li>
-                  <li>Administration réseau – bases (2025) Compréhension de l’adressage IP, du modèle OSI/TCP-IP et configuration de base de routeurs et switchs.</li>
-                  <li>Sensibilisation à la cybersécurité (nov. 2025)
-<li>Dépannage réseau – simulation (2025) Analyse des pannes, tests de connectivité (ping, traceroute) et correction des erreurs de configuration.</li>
+                  <li>Simulation de réseaux informatiques (déc. 2025) : Réalisation d’un réseau local virtuel via Cisco Packet Tracer (VLAN, DHCP, routage statique et dynamique).</li>
+                  <li>Administration réseau – bases (2025) : Compréhension de l’adressage IP, du modèle OSI/TCP-IP et configuration de base de routeurs et switchs.</li>
+                  <li>Dépannage réseau – simulation (2025) : Analyse des pannes, tests de connectivité (ping, traceroute) et correction des erreurs de configuration.</li>
                 </ul>
               </div>
 
               <div class="resume-item">
                 <h4>Cybersécurité</h4>
                 <ul>
-                  <li>Sensibilisation à la cybersécurité (nov. 2025) MOOC ANSSI + Certification Cisco Introduction to Cybersecurity : compréhension des cybermenaces, vulnérabilités et bonnes pratiques de protection</li>
-                  <li>Hygiène numérique (2025) Gestion des mots de passe, sauvegardes, mises à jour et protection des données personnelles.</li>
-                  <li>Notions de sécurité réseau (2025) Compréhension des pare-feu, attaques courantes et principes de sécurisation des réseaux.</li>
+                  <li>Sensibilisation à la cybersécurité (nov. 2025) : MOOC ANSSI + Certification Cisco Introduction to Cybersecurity (compréhension des cybermenaces, vulnérabilités).</li>
+                  <li>Hygiène numérique (2025) : Gestion des mots de passe, sauvegardes, mises à jour et protection des données.</li>
+                  <li>Notions de sécurité réseau (2025) : Compréhension des pare-feu, attaques courantes et principes de sécurisation.</li>
                 </ul>
               </div>
             </div>
 
-            <!-- Education Section -->
             <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
               <h3><i class="bi bi-mortarboard me-2"></i>Éducation</h3>
-
               <div class="resume-item">
-                <h4>BUT en Réseaux et Télécommunication</h4>
+                <h4>BUT en Réseaux et Télécommunications</h4>
                 <h5>2025 - 2028</h5>
                 <p class="company"><i class="bi bi-building"></i> IUT de Béthune</p>
               </div>
-
               <div class="resume-item">
-                <h4> Baccalauréat Général</h4>
+                <h4>Baccalauréat Général</h4>
                 <h5>2024</h5>
-                <p class="company"><i class="bi bi-building"></i>  Lycée Cours Lumière, Lomé</p>
+                <p class="company"><i class="bi bi-building"></i> Lycée Cours Lumière, Lomé</p>
               </div>
             </div>
 
-            <!-- Certifications Section -->
             <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
               <h3><i class="bi bi-award me-2"></i>Certifications</h3>
-
               <div class="resume-item">
                 <h4>Python Essentials 1 and 2 - Cisco Networking Academy</h4>
                 <h5>2025</h5>
               </div>
-
               <div class="resume-item">
-                <h4>Cisco Certified Support Technician -  Cisco Networking Academy </h4>
+                <h4>Cisco Certified Support Technician - Cisco Networking Academy</h4>
                 <h5>2025</h5>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projets</h2>
+        <p>Dans cette section, je présente les projets réalisés au cours des différentes SAE, mettant en pratique les compétences acquises durant ma formation.</p>
       </div>
 
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Dans ce portfolio, je vais présenter les projets réalisés au cours des différentes SAE, mettant en pratique les compétences acquises durant ma formation.</p>
-      </div><!-- End Section Title -->
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
           <div class="row">
             <div class="col-lg-3 filter-sidebar">
               <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
                 <ul class="portfolio-filters isotope-filters">
-                  <li data-filter="*" class="filter-active">Tous mes Projects</li>
-                  <li data-filter=".filter-photography">Admnister</li>
+                  <li data-filter="*" class="filter-active">Tous mes Projets</li>
+                  <li data-filter=".filter-photography">Administrer</li>
                   <li data-filter=".filter-design">Connecter</li>
                   <li data-filter=".filter-automotive">Programmer</li>
                   <li data-filter=".filter-surverller">Surveiller</li>
@@ -437,159 +683,102 @@
 
             <div class="col-lg-9">
               <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
-
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-photography">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/ad.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/ad.jpeg" class="img-fluid" alt="Projet Administrer" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">Réseaux informatiques</span>
-                        <h4>Sae 1.02</h4>
+                        <h4>SAÉ 1.02</h4>
                         <div class="portfolio-links">
-                          <a href="assets/img/portfolio/ad.webp" class="glightbox" title="Capturing Moments"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="assets/img/portfolio/ad.jpeg" class="glightbox" title="SAÉ 1.02"><i class="bi bi-plus-lg"></i></a>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modalAdministrer" title="Voir l'analyse portfolio"><i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div><!-- End Portfolio Item -->
+                </div>
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/cb.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/cb.webp" class="img-fluid" alt="Projet Connecter" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
-                        <span class="category">Transmission</span>
-                          <h4>Sae 1.03</h4>
+                        <span class="category">Transmission / ToIP</span>
+                        <h4>SAÉ 1.03</h4>
                         <div class="portfolio-links">
-                          <a href="assets/img/portfolio/cb.webp" class="glightbox" title="Woodcraft Design"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="assets/img/portfolio/cb.webp" class="glightbox" title="SAÉ 1.03"><i class="bi bi-plus-lg"></i></a>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modalConnecter" title="Voir l'analyse portfolio"><i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div><!-- End Portfolio Item -->
+                </div>
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automotive">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/prr.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/prr.webp" class="img-fluid" alt="Projet Programmer" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">Se présenter sur Internet</span>
-                        <h4>Sae 1.04 </h4>
+                        <h4>SAÉ 1.04 / 1.14</h4>
                         <div class="portfolio-links">
-                          <a href="assets/img/portfolio/prr.webp" class="glightbox" title="Classic Beauty"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="assets/img/portfolio/prr.webp" class="glightbox" title="SAÉ 1.04"><i class="bi bi-plus-lg"></i></a>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modalProgrammer" title="Voir l'analyse portfolio"><i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div><!-- End Portfolio Item -->
+                </div>
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-nature">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/sc.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                    <img src="assets/img/portfolio/sc.webp" class="img-fluid" alt="Projet Sécuriser" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
                         <span class="category">Sécuriser</span>
-                        <h4>Sae 1.01</h4>
+                        <h4>SAÉ 1.01</h4>
                         <div class="portfolio-links">
-                          <a href="assets/img/portfolio/sc.webp" class="glightbox" title="Natural Growth"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                          <a href="assets/img/portfolio/sc.webp" class="glightbox" title="SAÉ 1.01"><i class="bi bi-plus-lg"></i></a>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modalSecuriser" title="Voir l'analyse portfolio"><i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-surverller">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/sr.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Surveiller</span>
-                        <h4>Avenir </h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/sr.webp" class="glightbox" title="Digital Experience"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/ad.jpeg" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Réseaux Informatiques</span>
-                        <h4>Sae 1.02</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/ad.jpeg" class="glightbox" title="Digital Experience"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                
-              </div><!-- End Portfolio Container -->
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- /Portfolio Section -->
-   
-
-   
+    </section>
 
   </main>
 
   <footer id="footer" class="footer position-relative">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© 2025 <strong>YELENEKE Ivana</strong> – Tous droits réservés</p>
+      <div class="copyright text-center">
+        <p>© 2026 <strong>YELENEKE Ivana</strong> – Tous droits réservés</p>
       </div>
       <div class="credits">
-        <a href="mentions légals et crédits.html">Mentions légales et crédits</a>
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <a href="mentions-legales.html">Mentions légales et crédits</a> | Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-
 </body>
-
 </html>
